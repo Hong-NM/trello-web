@@ -1,23 +1,22 @@
-import { createTheme } from '@mui/material/styles'
-import { red } from '@mui/material/colors'
+import { deepOrange, orange, red ,teal, cyan } from '@mui/material/colors'
+import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 // Create a theme instance.
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: red[500]
+const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: teal,
+        secondary: deepOrange,
+      },
     },
-    secondary: {
-      main: '#19857b'
+    dark: {
+      palette: {
+        primary: cyan,
+        secondary: orange,
+      },
     },
-    error: {
-      main: red.A400
-    },
-    text: {
-      secondary: red[500]
-    }
-  }
-})
+  },
+});
 
 export default theme
