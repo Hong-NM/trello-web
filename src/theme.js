@@ -1,3 +1,4 @@
+import { BorderColor } from '@mui/icons-material'
 import { deepOrange, orange, red ,teal, cyan } from '@mui/material/colors'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
@@ -21,6 +22,39 @@ const theme = extendTheme({
       },
     },
   },
-});
+
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          textTransform: 'none'
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        // Name of the slot
+        root : ({ theme }) => ({
+            color: theme.palette.primary.main,
+            fontSize: '0.875rem',
+            '.MuiOutlinedInput-notchedOutline':{
+              borderColor: theme.palette.primary.light
+            },
+            '&:hover':{
+              '.MuiOutlinedInput-notchedOutline':{
+                borderColor: theme.palette.primary.light
+              },
+            },
+            '& fieldset':{
+              borderWidth: '1px !important' 
+            }
+          })
+      },
+    },
+  },
+})
 
 export default theme
