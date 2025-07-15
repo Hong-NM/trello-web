@@ -23,6 +23,7 @@ function Started() {
   return (
     <Box>
       <Button
+        sx={{ color: 'white '}}
         id="basic-button-started"
         aria-controls={open ? 'basic-menu-started' : undefined}
         aria-haspopup="true"
@@ -30,7 +31,7 @@ function Started() {
         onClick={handleClick}
         endIcon={<ExpandMore />}
       >
-        Recent
+        Started
       </Button>
       <Menu
         id="basic-menu-started"

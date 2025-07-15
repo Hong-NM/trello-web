@@ -1,5 +1,4 @@
 import { BorderColor, Height } from '@mui/icons-material'
-import { deepOrange, orange, red ,teal, cyan } from '@mui/material/colors'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 // Create a theme instance.
@@ -9,18 +8,18 @@ const theme = extendTheme({
     boardBarHeight: '60px'
   },
   colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: deepOrange,
-      },
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: orange,
-      },
-    },
+    // light: {
+    //   palette: {
+    //     primary: teal,
+    //     secondary: deepOrange,
+    //   },
+    // },
+    // dark: {
+    //   palette: {
+    //     primary: cyan,
+    //     secondary: orange,
+    //   },
+    // },
   },
 
   components: {
@@ -32,11 +31,11 @@ const theme = extendTheme({
             height: '8px',
           },
           '*::-webkit-scrollbar-thumb':{
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover':{
-            backgroundColor: '#00b894',
+            backgroundColor: 'white',
           }
         }
       }
@@ -47,28 +46,27 @@ const theme = extendTheme({
         // Name of the slot
         root: {
           // Some CSS
-          textTransform: 'none'
+          textTransform: 'none',
+          borderWidth: '0,5px',
+          '&:hover': { bordeWidth: '0.5px' }
+
         },
       },
+    },
+    MuiInputLabel:{
+      styleOverrides:{
+        root: { fontSize: '0.875rem' }
+      }
     },
     MuiOutlinedInput: {
       styleOverrides: {
         // Name of the slot
-        root : ({ theme }) => ({
-            color: theme.palette.primary.main,
+        root : {
             fontSize: '0.875rem',
-            '.MuiOutlinedInput-notchedOutline':{
-              borderColor: theme.palette.primary.light
-            },
-            '&:hover':{
-              '.MuiOutlinedInput-notchedOutline':{
-                borderColor: theme.palette.primary.light
-              },
-            },
-            '& fieldset':{
-              borderWidth: '1px !important' 
-            }
-          })
+            '& fieldset':{ borderWidth: '0.5px !important' },
+            '&:hover fieldset':{ borderWidth: '1px !important' },
+            '&.Mui-focused fieldset':{ borderWidth: '1px !important' }
+          }
       },
     },
   },
