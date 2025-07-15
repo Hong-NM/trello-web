@@ -35,7 +35,7 @@ function Profiles() {
           aria-expanded={open ? 'true' : undefined}
         >
           <Avatar 
-          sx={{ width: 34, height: 34 }}
+          sx={{ width: 36, height: 36 }}
           alt="Minh Hong"
           src="https://cdnv2.tgdd.vn/mwg-static/common/News/1575648/hinh-nen-dien-thoai-cute-30-2.jpg"
         />

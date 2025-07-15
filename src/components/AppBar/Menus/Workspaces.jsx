@@ -28,6 +28,7 @@ function WorkSpaces() {
   return (
     <Box>
       <Button
+        sx={{ color: 'white '}}
         id="basic-button-workspaces"
         aria-controls={open ? 'basic-menu-worksapces' : undefined}
         aria-haspopup="true"
@@ -35,7 +36,7 @@ function WorkSpaces() {
         onClick={handleClick}
         endIcon={<ExpandMore />}
       >
-        Dashboard
+        Workspace
       </Button>
       <Menu
         id="basic-menu-worksapces"
